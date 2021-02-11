@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ItemFilterMain.qml</file>
+        <file>img/navigate_minus.png</file>
+        <file>img/navigate_plus.png</file>
+        <file>img/containership.png</file>
+        <file>img/pirates_ship.png</file>
+        <file>img/icon_filter.png</file>
+        <file>img/arrow.png</file>
+        <file>img/scale.png</file>
+        <file>img/scale_end.png</file>
+        <file>ItemArrowLocation.qml</file>
+        <file>ItemMap.qml</file>
+        <file>ShipsEnemies.qml</file>
+        <file>MenuLookChange.qml</file>
+        <file>img/lightning.png</file>
+        <file>ItemTextGradient.qml</file>
+        <file>img/vectorDirectionShip.png</file>
+    </qresource>
+</RCC>
