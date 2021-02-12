@@ -238,7 +238,6 @@ Map
 
     property double latitudeForMyShip: 0.05
     property double longitudeForMyShip: 0.05
-    property double multiplierVector: 5
 
     //Подключение врагов
     ShipsEnemies
@@ -271,8 +270,8 @@ Map
                  { latitude:  itemShip.coordinate.latitude,
                    longitude: itemShip.coordinate.longitude },
 
-                 { latitude:  itemShip.coordinate.latitude + latitudeForMyShip   + multiplierVector  ,
-                   longitude: itemShip.coordinate.longitude + longitudeForMyShip + multiplierVector }
+                 { latitude:  itemShip.coordinate.latitude + latitudeForMyShip * 5,
+                   longitude: itemShip.coordinate.longitude + longitudeForMyShip * 5}
              ]
         }
 

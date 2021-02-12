@@ -10,7 +10,6 @@ MapItemGroup
 {
     property double latitudeForEnemyShip:  Math.random() * 0.10 - 0.02
     property double longitudeForEnemyShip: Math.random() * 0.10 - 0.02
-    property double multiplierVector: 3
 
     //Радиус видимости
     MapCircle
@@ -31,10 +30,8 @@ MapItemGroup
              { latitude:  quickItem.coordinate.latitude,
                longitude: quickItem.coordinate.longitude },
 
-             { latitude: quickItem.coordinate.latitude + multiplierVector *
-                         (latitudeForEnemyShip + (0.1 - latitudeForEnemyShip))  ,
-               longitude:quickItem.coordinate.longitude +multiplierVector *
-                         (latitudeForEnemyShip + (0.1 - longitudeForEnemyShip))}
+             { latitude: quickItem.coordinate.latitude + latitudeForEnemyShip * 5,
+               longitude:quickItem.coordinate.longitude + longitudeForEnemyShip * 5}
          ]
     }
 
@@ -72,6 +69,9 @@ MapItemGroup
        }
    }
 
+   property double latitudeForEnemyShip2:  Math.random() * 0.10 - 0.08
+   property double longitudeForEnemyShip2: Math.random() * 0.10 - 0.08
+
    MapCircle
    {
        center: quickItem_2.coordinate
@@ -79,6 +79,20 @@ MapItemGroup
        color: '#ff0033'
        border.width: 1
        opacity: 0.5
+   }
+
+   //Направление корабля из расчета координат предыдущих двух точек
+   MapPolyline
+   {
+        line.width: 3
+        line.color: 'red'
+        path: [
+            { latitude:  quickItem_2.coordinate.latitude,
+              longitude: quickItem_2.coordinate.longitude },
+
+            { latitude: quickItem_2.coordinate.latitude + latitudeForEnemyShip2 * 5,
+              longitude:quickItem_2.coordinate.longitude + longitudeForEnemyShip2 * 5}
+        ]
    }
 
    MapQuickItem
@@ -105,8 +119,10 @@ MapItemGroup
            repeat: true
            onTriggered:
            {
-               quickItem_2.coordinate.latitude  += Math.random() * 0.10 - 0.08
-               quickItem_2.coordinate.longitude += Math.random() * 0.10 - 0.08
+               latitudeForEnemyShip2  = Math.random() * 0.10 - 0.02
+               longitudeForEnemyShip2 = Math.random() * 0.10 - 0.02
+               quickItem_2.coordinate.latitude  += latitudeForEnemyShip2
+               quickItem_2.coordinate.longitude += longitudeForEnemyShip2
            }
        }
    }
